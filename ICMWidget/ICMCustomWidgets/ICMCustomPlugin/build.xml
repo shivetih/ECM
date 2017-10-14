@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="ICM Client Build" default="all" basedir=".">
+
+<target name="clean">
+	<delete>
+		<fileset dir=".">
+			<include name="*.jar" />
+		</fileset>
+        <fileset dir="./bin">
+            <include name="*.*" />
+        </fileset> 
+	</delete>	
+</target>
+
+<target name="buildPlugin">
+	<javac destdir="./bin" srcdir="./src" source="1.6" target="1.6" debug="on">
+		<classpath>
+			<pathelement location="./lib/nexus.jar" />
+		</classpath>
+	</javac>
+	<copy todir="./bin" overwrite="yes">
+		<fileset dir="./src">
+			<include name="com/cah/icm/extension/custom/WebContent/**/*.*" />
+		</fileset>
+	</copy>		
+	<jar destfile="./ICMCustomPlugin.jar" manifest="./src/META-INF/MANIFEST.MF" update="true">
+		<fileset dir="./bin">
+			<include name="**/*.*" />
+		</fileset>
+	</jar>
+</target>
+
+
+<target name="all" depends="clean,buildPlugin"></target>
+</project>

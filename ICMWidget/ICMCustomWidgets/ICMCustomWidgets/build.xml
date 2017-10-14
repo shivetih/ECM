@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="ICM Client Build" default="all" basedir=".">
+
+<target name="clean">
+	<delete>
+		<fileset dir=".">
+			<include name="*.war" />
+			<include name="*.ear" />
+		</fileset>
+	</delete>	
+</target>
+
+<target name="createWAR">
+    <war destfile="./ICMCustomWidgets.war" webxml="./WebContent/WEB-INF/web.xml">
+        <fileset dir="./WebContent">
+        	<include name="**/*.*" />
+        </fileset>
+    </war>
+</target>
+
+<target name="createEAR">
+	<ear destfile="./ICMCustomWidgets.ear" appxml="./WebContent/META-INF/application.xml">
+	      <fileset dir="." includes="*.war"/>
+	</ear>
+</target>
+
+<target name="all" depends="clean,createWAR,createEAR"></target>
+</project>

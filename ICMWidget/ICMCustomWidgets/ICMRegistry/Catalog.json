@@ -1,0 +1,28 @@
+{
+    "Name":"IBM Case Manager custom widget package",
+    "Description":"IBM Case Manager custom widget package",
+    "Locale":"",
+    "Version":"5.2",
+    "Categories":[
+        {
+            "id":"ICMCustomWidgets",
+            "title":"ICM Custom Widgets"
+        }
+    ],
+    "Widgets":[
+		
+		{
+	       "id":"KRTLProductDataWidget",
+	       "title":"Korea RTL Product Data Widget",
+	       "category":"ICMCustomWidgets",
+	       "description":"This widget show product data for Korea RTL Cases",
+	       "definition":"KRTLProductDataWidget.json",
+           "preview": "images/caseinfo_preview.png",
+           "icon": "images/caseinfo_icon.png",
+	       "runtimeClassName":"cah.custom.pgwidget.krtlWidget.KRTLProductDataWidget",
+	       "help": "acmwrh126.htm",
+	       "previewThumbnail":"images/caseinfo_thumb.gif"
+		}
+		
+	]
+}

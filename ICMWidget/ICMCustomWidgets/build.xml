@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="ICMCustomWidgets" default="all" basedir=".">
+     <property name="version" value="1.0" />
+     <property name="build.basedir" value="${basedir}/../../build" />
+     <property name="build.dir" value="${build.basedir}/${ant.project.name}" />
+     <property name="plugin.home" value="${basedir}/ICMCustomPlugin"/>
+     <property name="webapp.home" value="${basedir}/ICMCustomWidgets"/>
+    <target name="clean">
+        <ant antfile="${plugin.home}/build.xml" target="clean">
+            <property name="basedir" value="${plugin.home}"/>
+        </ant>
+
+        <ant antfile="${webapp.home}/build.xml" target="clean"> 
+            <property name="basedir" value="${webapp.home}"/>
+        </ant> 
+
+        <delete>
+            <fileset dir="${build.basedir}">
+                <include name="${build.basedir}/${ant.project.name}-${version}.zip"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="package">
+        <ant antfile="${plugin.home}/build.xml" target="buildPlugin">
+            <property name="basedir" value="${plugin.home}"/>
+        </ant>
+
+        <ant antfile="${webapp.home}/build.xml" target="createWAR">
+            <property name="basedir" value="${webapp.home}"/>
+        </ant>
+
+        <ant antfile="${webapp.home}/build.xml" target="createEAR">
+            <property name="basedir" value="${webapp.home}"/>
+        </ant>
+
+        <zip destfile="${build.basedir}/${ant.project.name}-${version}.zip">
+            <fileset dir="${plugin.home}">
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="${webapp.home}">
+                <include name="*.ear"/>
+            </fileset>
+            <zipfileset dir="${basedir}/ICMRegistry" prefix="ICMRegistry">
+            </zipfileset>
+        </zip>
+
+    </target>
+
+    <target name="all" depends="clean,package"></target>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inspection xmlns="http://schemas.xmlsoap.org/ws/2001/10/inspection/"
+xmlns:wsilwsdl="http://schemas.xmlsoap.org/ws/2001/10/inspection/wsdl/"
+xmlns:wsiluddi="http://schemas.xmlsoap.org/ws/2001/10/inspection/uddi/"
+xmlns:uddi="urn:uddi-org:api">
+<service>
+<abstract xml:lang="en-US">
+
+</abstract>
+<description referencedNamespace="http://schemas.xmlsoap.org/wsdl/" location="NewWSDLFileSOAP.wsdl">
+<wsilwsdl:reference endpointPresent="true">
+<wsilwsdl:referencedService xmlns:impl="http://www.example.org/NewWSDLFile/">impl:NewWSDLFile</wsilwsdl:referencedService>
+</wsilwsdl:reference>
+</description>
+</service>
+</inspection>
+

@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/org/example/www/NewWSDLFile/NewWSDLFileSOAPImpl.java=UTF-8
+encoding//src/org/example/www/NewWSDLFile/NewWSDLFileSOAPSkeleton.java=UTF-8
+encoding//src/org/example/www/NewWSDLFile/NewWSDLFileSOAPStub.java=UTF-8
+encoding//src/org/example/www/NewWSDLFile/NewWSDLFile_PortType.java=UTF-8
+encoding//src/org/example/www/NewWSDLFile/NewWSDLFile_Service.java=UTF-8
+encoding//src/org/example/www/NewWSDLFile/NewWSDLFile_ServiceLocator.java=UTF-8
+encoding//src/org/tempuri/Calculator.java=UTF-8
+encoding//src/org/tempuri/CalculatorLocator.java=UTF-8
+encoding//src/org/tempuri/CalculatorSoap.java=UTF-8
+encoding//src/org/tempuri/CalculatorSoapStub.java=UTF-8
